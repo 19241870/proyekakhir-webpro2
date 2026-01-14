@@ -1,0 +1,250 @@
+body {
+    margin: 0;
+    background: #f4f6f9;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ===== LAYOUT ===== */
+.layout {
+    display: flex;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 260px;
+    height: 100vh;
+    background: linear-gradient(135deg, #064E3B, #043125);
+    padding: 20px;
+    color: #fff;
+    z-index: 1050;
+    transition: transform .3s ease;
+}
+
+/* ===== SIDEBAR MENU ===== */
+.sidebar .nav-link {
+    color: #eaffea;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all .2s ease;
+}
+
+/* Hover */
+/* .sidebar .nav-link:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+} */
+
+/* Active */
+/* .sidebar .nav-link.active {
+    background: #2f8f2f;
+    color: #ffffff;
+    font-weight: 600;
+} */
+
+.sidebar .nav-link.active,
+.sidebar .nav-link:hover {
+    background: #ffffff;
+    color: #2f8f2f;
+    font-weight: 600;
+}
+
+/* Icon ikut warna */
+.sidebar .nav-link i {
+    font-size: 18px;
+}
+
+.sidebar.collapsed {
+    transform: translateX(-100%);
+}
+
+.sidebar.show {
+    transform: translateX(0);
+}
+
+.sidebar-footer {
+    position: absolute;
+    bottom: 20px;
+    font-size: 13px;
+}
+
+.sidebar-footer .online {
+    color: #9cff9c;
+}
+
+/* ===== OVERLAY ===== */
+.sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .4);
+    display: none;
+    z-index: 1040;
+}
+
+.sidebar-overlay.active {
+    display: block;
+}
+
+/* ===== CONTENT ===== */
+.content {
+    margin-left: 260px;
+    width: 100%;
+    min-height: 100vh;
+    transition: margin-left .3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.content.expanded {
+    margin-left: 0;
+}
+
+.logout {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* ===== TOPBAR ===== */
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    height: 70px;
+    background: #fff;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .06);
+}
+
+/* ===== PAGE BODY ===== */
+.page-body {
+    padding: 30px;
+}
+
+/* ===== CARDS ===== */
+.stat-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .06);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 991px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .content {
+        margin-left: 0;
+    }
+}
+
+.stat-card i {
+    font-size: 40px;
+    opacity: .3;
+}
+
+.stat-card.green {
+    border-left: 5px solid #2f8f2f;
+}
+
+.stat-card.blue {
+    border-left: 5px solid #3b82f6;
+}
+
+.stat-card.yellow {
+    border-left: 5px solid #f59e0b;
+}
+
+.stat-card.purple {
+    border-left: 5px solid #8b5cf6;
+}
+
+.chart-card {
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== UPLOAD FOTO SEKOLAH ===== */
+.upload-box {
+    border: 2px dashed #cbd5e1;
+    border-radius: 16px;
+    padding: 30px;
+    cursor: pointer;
+    position: relative;
+    transition: all .3s ease;
+    background: #f8fafc;
+}
+
+.upload-box:hover {
+    border-color: #22c55e;
+    background: #f0fdf4;
+}
+
+.upload-box.dragover {
+    border-color: #16a34a;
+    background: #dcfce7;
+}
+
+.upload-content i {
+    color: #22c55e;
+}
+
+.img-preview {
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.notification-content {
+    min-width: 0;
+    /* PENTING untuk flex */
+}
+
+.notification-message {
+    white-space: normal;
+    /* allow wrap */
+    word-break: break-word;
+    /* pecah kata panjang */
+    overflow-wrap: anywhere;
+    /* antisipasi string panjang */
+    line-height: 1.3;
+}
+
+.star-rating {
+    position: relative;
+    font-size: 28px;
+    line-height: 1;
+    display: inline-block;
+}
+
+.stars-back {
+    color: #e5e7eb;
+    /* abu */
+}
+
+.stars-front {
+    color: #fbbf24;
+    /* kuning */
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+}
