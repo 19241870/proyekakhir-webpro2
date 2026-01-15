@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Dashboard Pemerintah')
-@section('page-title', 'Laporan Keluhan Sekolah')
+@section('page-title', 'Laporan Harian Sekolah')
 
 @section('content')
 <div class="container-fluid">
